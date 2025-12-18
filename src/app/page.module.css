@@ -1,0 +1,135 @@
+.main {
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  padding: 16px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 32px;
+  padding-top: 16px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #fff;
+  background: linear-gradient(135deg, #e50914 0%, #ff6b6b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #999;
+  margin: 0;
+}
+
+.error {
+  background-color: #1a1a1a;
+  border: 1px solid #e50914;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 40px;
+  color: #fff;
+}
+
+.error h2 {
+  margin: 0 0 12px 0;
+  color: #e50914;
+  font-size: 24px;
+}
+
+.error p {
+  margin: 0 0 16px 0;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.apiKeyHelp {
+  background-color: #0a0a0a;
+  padding: 16px;
+  border-radius: 4px;
+  margin-top: 16px;
+}
+
+.apiKeyHelp p {
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  color: #fff;
+}
+
+.apiKeyHelp ol {
+  margin: 0;
+  padding-left: 20px;
+  color: #ccc;
+}
+
+.apiKeyHelp li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.apiKeyHelp code {
+  background-color: #2a2a2a;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #e50914;
+}
+
+.apiKeyHelp a {
+  color: #e50914;
+  text-decoration: none;
+}
+
+.apiKeyHelp a:hover {
+  text-decoration: underline;
+}
+
+/* Tablet and above */
+@media (min-width: 768px) {
+  .main {
+    padding: 24px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+    padding-top: 24px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .main {
+    padding: 32px;
+  }
+
+  .header {
+    margin-bottom: 48px;
+    padding-top: 32px;
+  }
+
+  .title {
+    font-size: 56px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+}
