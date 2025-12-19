@@ -10,9 +10,8 @@ A web application for discovering popular movies using [The Movie Database (TMDB
 
 ### Prerequisites
 
-- Node.js 18.x or higher
 - npm or yarn
-- A TMDB API key (instructions below)
+- A TMDB API key
 
 ### Installation
 
