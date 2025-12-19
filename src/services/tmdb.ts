@@ -1,4 +1,4 @@
-import { Movie, MoviesResponse, MovieDetails } from '@/types/movie';
+import { MoviesResponse, MovieDetails } from '@/types/movie';
 
 const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
 const BASE_URL = process.env.NEXT_PUBLIC_TMDB_BASE_URL || 'https://api.themoviedb.org/3';
@@ -65,10 +65,41 @@ export async function getTopRatedMovies(page: number = 1): Promise<MoviesRespons
 /**
  * Fetches movie details by ID
  * @param movieId - The movie ID
- * @returns Promise with movie details
+ * @returns Promise with movie details or null if not found
  */
-export async function getMovieDetails(movieId: number): Promise<MovieDetails> {
-  return fetchFromTMDB<MovieDetails>(`/movie/${movieId}`);
+export async function getMovieDetails(movieId: number): Promise<MovieDetails | null> {
+  if (!API_KEY) {
+    throw new Error(
+      'TMDB API key is not configured. Please add NEXT_PUBLIC_TMDB_API_KEY to your .env.local file.'
+    );
+  }
+
+  const queryParams = new URLSearchParams({
+    api_key: API_KEY,
+  });
+
+  const url = `${BASE_URL}/movie/${movieId}?${queryParams}`;
+
+  try {
+    const response = await fetch(url, {
+      next: { revalidate: 3600 }, // Cache for 1 hour
+    });
+
+    if (!response.ok) {
+      if (response.status === 404) {
+        return null;
+      }
+      throw new Error(`TMDB API error: ${response.status} ${response.statusText}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching movie details:', error);
+    if (error instanceof Error && error.message.includes('404')) {
+      return null;
+    }
+    throw error;
+  }
 }
 
 /**

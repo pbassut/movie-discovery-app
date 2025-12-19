@@ -1,0 +1,62 @@
+.error {
+  background-color: #1a1a1a;
+  border: 1px solid #e50914;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 40px;
+  color: #fff;
+}
+
+.error h2 {
+  margin: 0 0 12px 0;
+  color: #e50914;
+  font-size: 24px;
+}
+
+.error p {
+  margin: 0 0 16px 0;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.apiKeyHelp {
+  background-color: #0a0a0a;
+  padding: 16px;
+  border-radius: 4px;
+  margin-top: 16px;
+}
+
+.apiKeyHelp p {
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  color: #fff;
+}
+
+.apiKeyHelp ol {
+  margin: 0;
+  padding-left: 20px;
+  color: #ccc;
+}
+
+.apiKeyHelp li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.apiKeyHelp code {
+  background-color: #2a2a2a;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #e50914;
+}
+
+.apiKeyHelp a {
+  color: #e50914;
+  text-decoration: none;
+}
+
+.apiKeyHelp a:hover {
+  text-decoration: underline;
+}
