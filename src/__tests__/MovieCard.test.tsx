@@ -78,4 +78,23 @@ describe('MovieCard', () => {
     const image = screen.getByAltText('Test Movie');
     expect(image).toBeInTheDocument();
   });
+
+  describe('Snapshot Tests', () => {
+    it('should match snapshot with complete movie data', () => {
+      const { container } = render(<MovieCard movie={mockMovie} />);
+      expect(container).toMatchSnapshot();
+    });
+
+    it('should match snapshot without poster', () => {
+      const movieWithoutPoster = { ...mockMovie, poster_path: null };
+      const { container } = render(<MovieCard movie={movieWithoutPoster} />);
+      expect(container).toMatchSnapshot();
+    });
+
+    it('should match snapshot without release date', () => {
+      const movieWithoutDate = { ...mockMovie, release_date: '' };
+      const { container } = render(<MovieCard movie={movieWithoutDate} />);
+      expect(container).toMatchSnapshot();
+    });
+  });
 });

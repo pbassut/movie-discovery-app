@@ -4,6 +4,7 @@ A modern, responsive web application for discovering popular movies using [The M
 
 ## Features
 
+- **Infinite Scrolling**: Automatically loads more movies as you scroll down
 - **Movie Grid Discovery**: Browse popular movies in a responsive grid layout
 - **Movie Details**: View detailed information including:
   - Original title
@@ -13,14 +14,14 @@ A modern, responsive web application for discovering popular movies using [The M
   - Release date
   - Genres and runtime
 - **Responsive Design**: Mobile-first approach with seamless experience across all devices
+- **Loading States**: Skeleton screens and spinners for smooth user experience
 - **Type Safety**: Full TypeScript implementation
 - **Testing**: Comprehensive test coverage with Jest and React Testing Library
 - **Performance**: Optimized with Next.js App Router, Server Components, and image optimization
 
 ## Screenshots
 
-![Home Page - Movie Grid](./screenshots/home.png)
-![Movie Detail Page](./screenshots/detail.png)
+![Movie Discovery App - Popular Movies Grid](./ss.png)
 
 ## Tech Stack
 
@@ -190,7 +191,6 @@ Supported sizes: `w92`, `w154`, `w185`, `w342`, `w500`, `w780`, `original`
 ## Future Enhancements
 
 Potential features for future iterations:
-- Pagination for movie lists
 - Search functionality
 - Filter by genre
 - Sort by rating/popularity/date

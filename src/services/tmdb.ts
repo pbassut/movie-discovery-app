@@ -17,7 +17,12 @@ class TMDBApiClient {
     const apiKey = process.env.NEXT_PUBLIC_TMDB_API_KEY;
     if (!apiKey) {
       throw new Error(
-        'TMDB API key is not configured. Please add NEXT_PUBLIC_TMDB_API_KEY to your .env.local file.'
+        'TMDB API key is not configured.\n\n' +
+        'To fix this:\n' +
+        '1. Copy .env.example to .env.local\n' +
+        '2. Get your API key from https://www.themoviedb.org/settings/api\n' +
+        '3. Add your API key to .env.local as NEXT_PUBLIC_TMDB_API_KEY=your_key_here\n' +
+        '4. Restart the development server'
       );
     }
     this.apiKey = apiKey;
