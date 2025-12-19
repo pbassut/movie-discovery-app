@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import MovieGrid from '@/components/MovieGrid';
+import MovieGrid from '@/components/MovieGrid/MovieGrid';
 import { Movie } from '@/types/movie';
 
 // Mock Next.js Image component

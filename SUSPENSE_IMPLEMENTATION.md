@@ -13,7 +13,7 @@ The app uses React Suspense and Next.js loading states to provide a smooth user 
 ## Components
 
 ### Spinner Component
-**Location**: `src/components/Spinner.tsx`
+**Location**: `src/components/Spinner/Spinner.tsx`
 
 A reusable animated spinner with three sizes:
 - Small (40px)
@@ -31,8 +31,8 @@ A reusable animated spinner with three sizes:
 - Responsive sizing
 - Red (#e50914) themed to match app branding
 
-### MovieGridSkeleton Component
-**Location**: `src/components/MovieGridSkeleton.tsx`
+### Skeleton Component
+**Location**: `src/components/MovieGrid/Skeleton/Skeleton.tsx`
 
 A skeleton screen that mimics the movie grid layout while data loads.
 
@@ -43,7 +43,7 @@ A skeleton screen that mimics the movie grid layout while data loads.
 - Matches MovieGrid layout exactly
 
 ### MovieList Component
-**Location**: `src/components/MovieList.tsx`
+**Location**: `src/components/MovieList/MovieList.tsx`
 
 A server component that fetches and displays the movie grid.
 
@@ -66,7 +66,7 @@ Shows when navigating to the home page:
 
 More granular loading within the page:
 ```tsx
-<Suspense fallback={<MovieGridSkeleton />}>
+<Suspense fallback={<Skeleton />}>
   <MovieList />
 </Suspense>
 ```
@@ -106,7 +106,7 @@ For more control, we use manual Suspense boundaries:
 </header>
 
 // Only the movie grid shows skeleton
-<Suspense fallback={<MovieGridSkeleton />}>
+<Suspense fallback={<Skeleton />}>
   <MovieList /> {/* async component */}
 </Suspense>
 ```

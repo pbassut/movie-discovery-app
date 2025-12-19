@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getMovieDetails, getImageUrl, formatReleaseDate, formatVoteAverage } from '@/services/tmdb';
+import { movieDetails, imageUrl, releaseDate, voteAverage } from '@/services/tmdb';
 import styles from './page.module.css';
 
 interface MoviePageProps {
@@ -10,7 +10,7 @@ interface MoviePageProps {
 
 export async function generateMetadata({ params }: MoviePageProps) {
   const { id } = await params;
-  const movie = await getMovieDetails(parseInt(id));
+  const movie = await movieDetails(parseInt(id));
 
   if (!movie) {
     return {
@@ -26,16 +26,16 @@ export async function generateMetadata({ params }: MoviePageProps) {
 
 export default async function MoviePage({ params }: MoviePageProps) {
   const { id } = await params;
-  const movie = await getMovieDetails(parseInt(id));
+  const movie = await movieDetails(parseInt(id));
 
   if (!movie) {
     return notFound();
   }
 
-  const posterUrl = getImageUrl(movie.poster_path, 'w500');
-  const backdropUrl = getImageUrl(movie.backdrop_path, 'original');
-  const voteAverage = formatVoteAverage(movie.vote_average);
-  const releaseDate = formatReleaseDate(movie.release_date);
+  const posterUrl = imageUrl(movie.poster_path, 'w500');
+  const backdropUrl = imageUrl(movie.backdrop_path, 'original');
+  const movieRating = voteAverage(movie.vote_average);
+  const releaseDateFormatted = releaseDate(movie.release_date);
 
   return (
     <main className={styles.main}>
@@ -95,14 +95,14 @@ export default async function MoviePage({ params }: MoviePageProps) {
                 <span className={styles.label}>Rating</span>
                 <div className={styles.rating}>
                   <span className={styles.star}>★</span>
-                  <span className={styles.ratingValue}>{voteAverage}</span>
+                  <span className={styles.ratingValue}>{movieRating}</span>
                   <span className={styles.ratingCount}>({movie.vote_count} votes)</span>
                 </div>
               </div>
 
               <div className={styles.metadataItem}>
                 <span className={styles.label}>Release Date</span>
-                <span className={styles.value}>{releaseDate}</span>
+                <span className={styles.value}>{releaseDateFormatted}</span>
               </div>
 
               {movie.runtime && (

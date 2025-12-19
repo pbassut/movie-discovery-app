@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
-import MovieList from '@/components/MovieList';
-import MovieGridSkeleton from '@/components/MovieGridSkeleton';
+import MovieList from '@/components/MovieList/MovieList';
+import Skeleton from '@/components/MovieGrid/Skeleton/Skeleton';
 import styles from './page.module.css';
 
 export const metadata = {
@@ -16,7 +16,7 @@ export default function HomePage() {
           <h1 className={styles.title}>Popular Movies</h1>
           <p className={styles.subtitle}>Discover the most popular movies playing now</p>
         </header>
-        <Suspense fallback={<MovieGridSkeleton />}>
+        <Suspense fallback={<Skeleton />}>
           <MovieList />
         </Suspense>
       </div>
