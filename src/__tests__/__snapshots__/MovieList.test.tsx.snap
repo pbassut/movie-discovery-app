@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`MovieList Snapshot Tests should match snapshot with API key error 1`] = `
+<div>
+  <div
+    class="error"
+  >
+    <h2>
+      Error Loading Movies
+    </h2>
+    <p
+      class="errorMessage"
+    >
+      TMDB API key is not configured.
+
+To fix this:
+1. Copy .env.example to .env.local
+2. Get your API key from https://www.themoviedb.org/settings/api
+3. Add your API key to .env.local as NEXT_PUBLIC_TMDB_API_KEY=your_key_here
+4. Restart the development server
+    </p>
+  </div>
+</div>
+`;
+
+exports[`MovieList Snapshot Tests should match snapshot with error state 1`] = `
+<div>
+  <div
+    class="error"
+  >
+    <h2>
+      Error Loading Movies
+    </h2>
+    <p
+      class="errorMessage"
+    >
+      Failed to load movies. Please try again later.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`MovieList Snapshot Tests should match snapshot with movie data 1`] = `
+<div>
+  <section
+    class="section"
+  >
+    <div
+      class="grid"
+    >
+      <a
+        href="/movie/1"
+      >
+        <div
+          class="posterContainer"
+        >
+          <img
+            alt="Movie 1"
+            class="poster"
+            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            src="https://image.tmdb.org/t/p/w342/poster1.jpg"
+          />
+          <div
+            class="rating"
+          >
+            <span
+              class="star"
+            >
+              ★
+            </span>
+            <span
+              class="ratingValue"
+            >
+              8.5
+            </span>
+          </div>
+        </div>
+        <div
+          class="info"
+        >
+          <h3
+            class="title"
+          >
+            Movie 1
+          </h3>
+          <p
+            class="releaseDate"
+          >
+            2024
+          </p>
+        </div>
+      </a>
+      <a
+        href="/movie/2"
+      >
+        <div
+          class="posterContainer"
+        >
+          <img
+            alt="Movie 2"
+            class="poster"
+            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            src="https://image.tmdb.org/t/p/w342/poster2.jpg"
+          />
+          <div
+            class="rating"
+          >
+            <span
+              class="star"
+            >
+              ★
+            </span>
+            <span
+              class="ratingValue"
+            >
+              7.5
+            </span>
+          </div>
+        </div>
+        <div
+          class="info"
+        >
+          <h3
+            class="title"
+          >
+            Movie 2
+          </h3>
+          <p
+            class="releaseDate"
+          >
+            2024
+          </p>
+        </div>
+      </a>
+    </div>
+  </section>
+</div>
+`;

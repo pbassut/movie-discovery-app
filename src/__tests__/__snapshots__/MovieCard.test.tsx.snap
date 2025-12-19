@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`MovieCard Snapshot Tests should match snapshot with complete movie data 1`] = `
+<div>
+  <a
+    href="/movie/1"
+  >
+    <div
+      class="posterContainer"
+    >
+      <img
+        alt="Test Movie"
+        class="poster"
+        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+        src="https://image.tmdb.org/t/p/w342/test-poster.jpg"
+      />
+      <div
+        class="rating"
+      >
+        <span
+          class="star"
+        >
+          ★
+        </span>
+        <span
+          class="ratingValue"
+        >
+          8.5
+        </span>
+      </div>
+    </div>
+    <div
+      class="info"
+    >
+      <h3
+        class="title"
+      >
+        Test Movie
+      </h3>
+      <p
+        class="releaseDate"
+      >
+        2024
+      </p>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`MovieCard Snapshot Tests should match snapshot without poster 1`] = `
+<div>
+  <a
+    href="/movie/1"
+  >
+    <div
+      class="posterContainer"
+    >
+      <div
+        class="posterPlaceholder"
+      >
+        <span>
+          No Image
+        </span>
+      </div>
+      <div
+        class="rating"
+      >
+        <span
+          class="star"
+        >
+          ★
+        </span>
+        <span
+          class="ratingValue"
+        >
+          8.5
+        </span>
+      </div>
+    </div>
+    <div
+      class="info"
+    >
+      <h3
+        class="title"
+      >
+        Test Movie
+      </h3>
+      <p
+        class="releaseDate"
+      >
+        2024
+      </p>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`MovieCard Snapshot Tests should match snapshot without release date 1`] = `
+<div>
+  <a
+    href="/movie/1"
+  >
+    <div
+      class="posterContainer"
+    >
+      <img
+        alt="Test Movie"
+        class="poster"
+        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+        src="https://image.tmdb.org/t/p/w342/test-poster.jpg"
+      />
+      <div
+        class="rating"
+      >
+        <span
+          class="star"
+        >
+          ★
+        </span>
+        <span
+          class="ratingValue"
+        >
+          8.5
+        </span>
+      </div>
+    </div>
+    <div
+      class="info"
+    >
+      <h3
+        class="title"
+      >
+        Test Movie
+      </h3>
+      <p
+        class="releaseDate"
+      >
+        N/A
+      </p>
+    </div>
+  </a>
+</div>
+`;
